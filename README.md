@@ -47,5 +47,8 @@ In the following screenshot you see a video with the original size of 640x480 (t
 
 By changing these values you can position and crop your video as you like. The original video remains untouched.
 
+![screeshot embed_video-plugin](screeshot_embed_video-plugin.png)
+
+
 
 
