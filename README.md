@@ -31,3 +31,14 @@ Put your video in ~/Pd/video. If you don't have that folder you can create it or
 Probably the video will appear too big to be used together with other objects of the patch, so you can define a visible area of the video and you can define where to position it by setting the crop and pos variables that you find at the beginning of the plugin file (embed_video-plugin.tcl).
 
 The plugin is really not very interactive: you can only start and pause the video. When the video finishes the player is ready to show it again. The play / pause command is imposed by pressing the space bar.
+
+The plugin has only been tested on linux
+----------------------------------------
+
+With some minor changes it can run on windows and mac.
+
+Have a good time
+
+Lazzaro
+
+
