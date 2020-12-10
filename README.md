@@ -41,4 +41,11 @@ Have a good time
 
 Lazzaro
 
+A screenshot follows.
+
+In the following screenshot you see a video with the original size of 640x480 (the video produced by a webcam) that is cropped by mplayer in this way: -vf crop = 220: 480: 44: 0. The position within the patch of this visible portion of video is given by placing the window at -x 240 -y 90.
+
+By changing these values you can position and crop your video as you like. The original video remains untouched.
+
+
 
