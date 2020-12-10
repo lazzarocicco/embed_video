@@ -38,7 +38,6 @@ The plugin has only been tested on linux
 > With some minor changes it can run on windows and mac.
 
 > Have a good time
-
 > Lazzaro
 
 In the following screenshot you see a video with the original size of 640x480 (the video produced by a webcam) that is cropped by mplayer in this way: -vf crop = 220: 480: 44: 0. The position within the patch of this visible portion of video is given by placing the window at -x 240 -y 90.
