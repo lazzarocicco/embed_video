@@ -36,13 +36,12 @@ set pos_y 90
 
 variable video_folder "$env(HOME)/Pd/video"
 
-
    variable mplayer_pipe
    variable line
    variable pid_player
    variable isplayng 0
+   variable video_file
 }
-
 
 proc get_done {internal_pipe finestra} {
 	global done
@@ -62,7 +61,7 @@ proc get_done {internal_pipe finestra} {
 }
 
 proc set_pipe {finestra} {
-	set ::E_v::mplayer_pipe [open "|mplayer -wid [scan [winfo id $finestra.c.f] %x] -vf crop=$::E_v::dim_w:$::E_v::dim_h:$::E_v::crop_x:$::E_v::crop_y -slave test_video.mkv" r+]
+	set ::E_v::mplayer_pipe [open "|mplayer -wid [scan [winfo id $finestra.c.f] %x] -vf crop=$::E_v::dim_w:$::E_v::dim_h:$::E_v::crop_x:$::E_v::crop_y -slave $::E_v::video_file" r+]
 	set ::E_v::pid_player [pid $::E_v::mplayer_pipe]
 	fileevent $::E_v::mplayer_pipe readable [list get_done $::E_v::mplayer_pipe $finestra]
 	puts $::E_v::mplayer_pipe pause
@@ -71,6 +70,7 @@ proc set_pipe {finestra} {
 
 proc show_player {finestra} {
 	if {[file exists $::E_v::video_folder/[file root $::windowname($finestra)].mkv]} {
+		set ::E_v::video_file $::E_v::video_folder/[file root $::windowname($finestra)].mkv
 		frame $finestra.c.f -width $::E_v::dim_w -height $::E_v::dim_h
 		place $finestra.c.f -x $::E_v::pos_x -y $::E_v::pos_y
 		::set_pipe $finestra
